@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f0f0f">
+<title>Sergio Beleño - Technical Lead (VTEX) | Full Stack Web Developer</title>
+<link rel="stylesheet" href="../dist/signal.css">
+<style>
+  .about-bio p { margin: 0 0 var(--space-4); max-width: 640px; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); align-items: start; }
+  @media (max-width: 820px) { .contact-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="../dist/signal.js"></script>
+<script>
+  /* The serbeld.space home page assembled only from Signal components, with the site's real content. */
+  var S = window.Signal, h = React.createElement;
+  var social = [
+    { network: 'instagram', href: 'https://www.instagram.com/sergio.techlead' },
+    { network: 'github', href: 'https://github.com/sergiotechlead' },
+    { network: 'linkedin', href: 'https://www.linkedin.com/in/serbeld/' }
+  ];
+  function section(id, index, title, body) {
+    return h('section', { className: 'sb-section', id: id, 'aria-labelledby': id + '-heading', key: id },
+      h('div', { className: 'sb-container' }, h(S.SectionHeading, { index: index, id: id + '-heading' }, title), body));
+  }
+  var experience = [
+    ['2025 - Present', 'Consultant / Engineer', 'Valtech', 'Bogotá, Colombia (Remote)', true],
+    ['2023 - 2025', 'Full-stack Developer (VTEX)', 'Rena Ware International', 'Bogotá, Colombia (Remote)'],
+    ['2022 - 2023', 'Technical Lead (VTEX)', 'Brandlive CO', 'Bogotá, Colombia (Hybrid)'],
+    ['2022', 'Senior Front End Developer (VTEX)', 'Brandlive CO', 'Bogotá, Colombia (Hybrid)'],
+    ['2021 - 2022', 'Web Developer (VTEX)', 'THM The Heating Movement', 'Bogotá, Colombia (Remote)'],
+    ['2021', 'Web Developer (VTEX)', 'Puppis', 'Bogotá, Colombia (Hybrid)']
+  ];
+  var skills = [['VTEX', 'Advanced', 90], ['HTML & CSS', 'Advanced', 90], ['Contentful', 'Advanced', 90], ['TypeScript', 'Intermediate', 85], ['React', 'Intermediate', 85], ['JavaScript', 'Intermediate', 85], ['GraphQL', 'Intermediate', 85], ['Next.js', 'Intermediate', 82], ['Node.js', 'Intermediate', 80], ['PostgreSQL', 'Intermediate', 78], ['Python', 'Familiar', 70]];
+  function Credentials() {
+    var st = React.useState('education'), tab = st[0], setTab = st[1];
+    return h('div', null,
+      h(S.Tabs, { label: 'Credentials', value: tab, onChange: setTab, tabs: [{ id: 'education', label: 'Education', panelId: 'cred-panel' }, { id: 'certifications', label: 'Certifications', panelId: 'cred-panel' }, { id: 'vtex', label: 'VTEX Training', panelId: 'cred-panel' }] }),
+      h('ul', { className: 'sb-timeline', id: 'cred-panel', role: 'tabpanel', 'aria-labelledby': 'sb-tab-' + tab },
+        tab === 'education' ? [
+          h(S.TimelineCard, { key: 'zab', date: '2025', title: 'Zeugnisbewertung: Mechatronikingenieur', company: 'Zentralstelle für ausländisches Bildungswesen (ZAB)', location: 'Bonn, Germany', description: 'Foreign degree from Universidad de Pamplona recognized by ZAB as equivalent to a German university degree, level between Bachelor and Master.' }),
+          h(S.TimelineCard, { key: 'unipamplona', date: '2015 - 2020', title: 'Mechatronics Engineer', company: 'University of Pamplona', location: 'Pamplona, Colombia' })
+        ] : h('li', { style: { fontSize: 14, color: 'var(--color-text-faint)' } }, 'Entries load from Contentful.')));
+  }
+  var App = h(React.Fragment, null,
+    h(S.SkipLink),
+    h(S.NavBar, { links: [['About', '#about', true], ['Experience', '#experience'], ['Skills', '#skills'], ['Services', '#services'], ['Contact', '#contact'], ['Blog', '#/blog']].map(function (l) { return { label: l[0], href: l[1], active: !!l[2] }; }) }),
+    h('main', { id: 'main-content', tabIndex: -1 },
+      h(S.Hero, {
+        eyebrow: 'Full Stack Web Developer', role: 'Technical Lead (VTEX)',
+        tagline: 'I build fast, reliable e-commerce experiences with React, Node.js, and VTEX — from architecture to pixel-level detail.',
+        actions: [{ label: 'Download CV', icon: 'download', href: 'https://assets.ctfassets.net/4q1lcmmfbr67/5srBnxUb8TLGlYbWSO8TS4/e0e8c182570dd4be702149cd572fffa4/001-FullStack-Contentful-Sergio-Beleno.pdf', external: true, title: "Download Sergio's CV as a PDF file" }, { label: 'Get in touch', icon: 'arrow-right', href: '#contact', title: 'Scroll down to the Contact section' }],
+        social: social
+      }),
+      section('about', 1, 'About', h('div', { className: 'sb-about' },
+        h('div', { className: 'about-bio' },
+          h('p', null, "I'm a Technical Leader and Full Stack Web Developer specialized in VTEX, SEO, and building impactful e-commerce experiences, based in Bogotá, Colombia."),
+          h('p', null, 'I work across the full stack — HTML, CSS, JavaScript, React, and Node.js — to deliver cutting-edge solutions for transformative online experiences, from system architecture down to pixel-level detail.')),
+        h(S.FactList, { facts: [{ label: 'Residence', value: 'Bogotá, Colombia' }, { label: 'Freelance', value: 'Available' }, { label: 'Specialty', value: 'VTEX Architecture' }, { label: 'Focus', value: 'React · Node.js' }] }))),
+      section('experience', 2, 'Experience', h('ul', { className: 'sb-timeline' }, experience.map(function (e) { return h(S.TimelineCard, { key: e[1] + e[0], date: e[0], title: e[1], company: e[2], location: e[3], current: !!e[4] }); }))),
+      section('credentials', 3, 'Education & Credentials', h(Credentials)),
+      section('skills', 4, 'Skills', h('div', null,
+        h('div', { className: 'sb-skill-grid' }, skills.map(function (s) { return h(S.SkillBar, { key: s[0], name: s[0], level: s[1], percentage: s[2] }); })),
+        h('div', { style: { marginTop: 'var(--space-7)' } }, h(S.CheckList, { title: 'Also working with', items: ['Strong understanding of React.js and its core principles.', 'Solid experience in JavaScript, HTML and CSS.', 'SEO Optimize.', 'Proficient understanding of cross-browser compatibility issues and ways to work around them.', 'Proficient understanding of code versioning tools, such as Git.', 'Experience with RESTful APIs.', 'Experience with data structure concepts and libraries.'] })))),
+      section('services', 5, 'Services', h('div', { className: 'sb-services sb-services--single' }, h(S.ServiceCard, { name: 'Contentful Development', description: 'I build and integrate Contentful across headless stacks: content modeling, migrations from WordPress and legacy CMSs, GraphQL layers, and reusable component libraries in React and Next.js. Editors get to publish without touching a developer.', price: 90, action: { label: 'Discuss your project', href: 'https://calendly.com/serbeldiaz/30min' } }))),
+      section('contact', 6, 'Contact', h('div', { className: 'contact-grid' },
+        h(S.ContactForm, { onSubmit: function () { return Promise.resolve(); } }),
+        h(S.Card, { title: 'Prefer to talk?', subtitle: 'Book a 30-minute call directly on my calendar.' }, h(S.Button, { variant: 'outline', icon: 'calendar-days', href: 'https://calendly.com/serbeldiaz/30min', external: true, title: 'Open Calendly to book a 30-minute call (opens in a new tab)' }, 'Schedule a call'))))
+    ),
+    h(S.Footer, { social: social })
+  );
+  ReactDOM.createRoot(document.getElementById('root')).render(App);
+</script>
+</body>
+</html>

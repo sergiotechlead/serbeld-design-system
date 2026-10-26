@@ -1,0 +1,64 @@
+/* Signal — generated from tokens.json */
+:root, [data-theme="dark"] {
+  --color-accent: #6daaf5;
+  --color-accent-hover: #8ec0fa;
+  --color-accent-dark: #407dc2;
+  --color-accent-soft: rgba(109, 170, 245, 0.12);
+  --color-accent-shadow: rgba(109, 170, 245, 0.35);
+  --color-bg: #0f0f0f;
+  --color-surface: #17181c;
+  --color-surface-2: #1e2025;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.16);
+  --color-text: #e7e7ea;
+  --color-text-muted: #a3a3ab;
+  --color-text-faint: #91919d;
+  --color-text-on-accent: #0f0f0f;
+  --color-success: #4ade80;
+  --color-error: #e57373;
+  --color-warning: #b45309;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+  --container-width: 1120px;
+  --nav-height: 72px;
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Lekton", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+.hero-name { font-family: var(--font-heading); font-size: 44px; line-height: 1.1; font-weight: 600; }
+.section-heading { font-family: var(--font-heading); font-size: 26px; line-height: 1.25; font-weight: 600; }
+.hero-role { font-family: var(--font-heading); font-size: 20px; line-height: 1.1; font-weight: 500; }
+.card-title { font-family: var(--font-heading); font-size: 17px; line-height: 1.25; font-weight: 600; }
+.service-name { font-family: var(--font-heading); font-size: 16px; line-height: 1.25; font-weight: 600; }
+.wordmark { font-family: var(--font-heading); font-size: 16px; line-height: 1.25; font-weight: 600; }
+.nav-link { font-family: var(--font-heading); font-size: 14px; line-height: 1.6; font-weight: 500; }
+.button-label { font-family: var(--font-heading); font-size: 14px; line-height: 1.6; font-weight: 600; }
+.section-index { font-family: var(--font-heading); font-size: 14px; line-height: 1.6; font-weight: 600; letter-spacing: 0.08em; }
+.eyebrow { font-family: var(--font-heading); font-size: 13px; line-height: 1.6; font-weight: 600; letter-spacing: 0.1em; }
+.form-label { font-family: var(--font-heading); font-size: 13px; line-height: 1.6; font-weight: 500; }
+.meta { font-family: var(--font-heading); font-size: 12px; line-height: 1.6; font-weight: 500; }
+.body { font-family: var(--font-body); font-size: 16px; line-height: 1.6; font-weight: 400; }
+.tagline { font-family: var(--font-body); font-size: 16px; line-height: 1.7; font-weight: 400; }
+.body-sm { font-family: var(--font-body); font-size: 14px; line-height: 1.6; font-weight: 400; }
+.input-text { font-family: var(--font-body); font-size: 15px; font-weight: 400; }
+.footer-text { font-family: var(--font-body); font-size: 13px; font-weight: 400; }
+@font-face { font-family: "Poppins"; src: url("../fonts/poppins-latin-300-normal.woff2") format("woff2"); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("../fonts/poppins-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("../fonts/poppins-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("../fonts/poppins-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Lekton"; src: url("../fonts/lekton-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Lekton"; src: url("../fonts/lekton-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Lekton"; src: url("../fonts/lekton-latin-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }

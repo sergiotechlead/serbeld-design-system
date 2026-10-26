@@ -1,0 +1,384 @@
+{
+  "$description": "Signal — W3C Design Tokens (DTCG) export of tokens.json, for Tokens Studio, Figma variable import and Style Dictionary.",
+  "color": {
+    "accent": {
+      "$type": "color",
+      "$value": "#6daaf5",
+      "$description": "Signal Blue, the single accent. Primary buttons, links, active nav, section index, skill-bar fill, focus outline. As text: 7.96:1 on color-bg, 7.36:1 on color-surface, 6.77:1 on color-surface-2. Reserve for what the visitor can act on or must notice."
+    },
+    "accent-hover": {
+      "$type": "color",
+      "$value": "#8ec0fa",
+      "$description": "Hover state for every accent surface (primary button, submit). color-text-on-accent on it reaches 10.11:1."
+    },
+    "accent-dark": {
+      "$type": "color",
+      "$value": "#407dc2",
+      "$description": "Alternate accent for rules, dividers, large numerals and decorative fills. Exactly 4.50:1 on color-bg and 4.16:1 on color-surface, so never body copy and never text below 18px; on color-surface only at 24px and up."
+    },
+    "accent-soft": {
+      "$type": "color",
+      "$value": "rgba(109, 170, 245, 0.12)",
+      "$description": "Badge and soft-button backgrounds (Tag, ServiceCard action, active Tab). Flattens to #1a222b on color-bg, #212a36 on color-surface. color-accent text on it: 6.02:1 or better."
+    },
+    "accent-shadow": {
+      "$type": "color",
+      "$value": "rgba(109, 170, 245, 0.35)",
+      "$description": "Border of the current TimelineCard and of Tags. Decorative: the Current badge carries the meaning in words. Flattens to #304560 on color-bg."
+    },
+    "bg": {
+      "$type": "color",
+      "$value": "#0f0f0f",
+      "$description": "Page background, the base layer (~70% of any screen). Also the ink of the wordmark on a Signal Blue field. Mobile theme-color must match it."
+    },
+    "surface": {
+      "$type": "color",
+      "$value": "#17181c",
+      "$description": "Cards, nav panels, the portrait backing (~20% with surface-2)."
+    },
+    "surface-2": {
+      "$type": "color",
+      "$value": "#1e2025",
+      "$description": "Inputs, skill-bar tracks, wells inside a card, skeleton base."
+    },
+    "border": {
+      "$type": "color",
+      "$value": "rgba(255, 255, 255, 0.08)",
+      "$description": "Default 1px hairline between surfaces: card shells, nav bottom, footer top, section-heading rule. Decorative only (1.2:1 on color-bg)."
+    },
+    "border-strong": {
+      "$type": "color",
+      "$value": "rgba(255, 255, 255, 0.16)",
+      "$description": "Hover borders, input borders, outline button, skeleton highlight. Source value kept: 1.56:1 on color-bg is below the 3:1 non-text guideline, so a field is identified by its visible label, and focus turns the border color-accent."
+    },
+    "text": {
+      "$type": "color",
+      "$value": "#e7e7ea",
+      "$description": "Headings and primary copy. 15.53:1 on color-bg, 14.37:1 on color-surface, 13.21:1 on color-surface-2 (AAA)."
+    },
+    "text-muted": {
+      "$type": "color",
+      "$value": "#a3a3ab",
+      "$description": "Body copy, nav links, meta. 7.65:1 on color-bg, 7.08:1 on color-surface, 6.51:1 on color-surface-2 (AAA on bg and surface)."
+    },
+    "text-faint": {
+      "$type": "color",
+      "$value": "#91919d",
+      "$description": "Timestamps, captions, footer, percentages, empty states. 6.15:1 on color-bg, 5.69:1 on color-surface, 5.23:1 on color-surface-2 (AA)."
+    },
+    "text-on-accent": {
+      "$type": "color",
+      "$value": "#0f0f0f",
+      "$description": "Text and icons on a color-accent or color-accent-hover fill (primary button, submit, skip link): 7.96:1 and 10.11:1."
+    },
+    "success": {
+      "$type": "color",
+      "$value": "#4ade80",
+      "$description": "Confirmation only, always with a word (Sent, DO). 11.00:1 on color-bg, 10.18:1 on color-surface."
+    },
+    "error": {
+      "$type": "color",
+      "$value": "#e57373",
+      "$description": "Validation errors only, always with a message (DO NOT, field errors). 6.42:1 on color-bg, 5.94:1 on color-surface. Differs from color-success by hue more than lightness (1.71:1), so never rely on the colour alone."
+    },
+    "warning": {
+      "$type": "color",
+      "$value": "#b45309",
+      "$description": "Offline banner and system-level warnings, as a fill or a rule. Source value kept: as text it is 3.82:1 on color-bg and 3.53:1 on color-surface (fails body text), and color-text on a warning fill is 4.07:1 (large or bold 19px+ only). Set warning copy in color-text beside a warning rule."
+    }
+  },
+  "space": {
+    "1": {
+      "$type": "dimension",
+      "$value": "4px",
+      "$description": "Hairline offsets, tight label gaps."
+    },
+    "2": {
+      "$type": "dimension",
+      "$value": "8px",
+      "$description": "Icon-to-label gap, label above field, skill-bar height."
+    },
+    "3": {
+      "$type": "dimension",
+      "$value": "12px",
+      "$description": "Section-heading gaps, button pairs, social icon gap, button vertical padding."
+    },
+    "4": {
+      "$type": "dimension",
+      "$value": "16px",
+      "$description": "Timeline logo gap, container padding at 720px and below, footer social gap."
+    },
+    "5": {
+      "$type": "dimension",
+      "$value": "24px",
+      "$description": "Card padding, container padding on desktop, skill-grid gap."
+    },
+    "6": {
+      "$type": "dimension",
+      "$value": "32px",
+      "$description": "Section heading to content, service-card padding, footer padding."
+    },
+    "7": {
+      "$type": "dimension",
+      "$value": "48px",
+      "$description": "Section padding at 720px and below."
+    },
+    "8": {
+      "$type": "dimension",
+      "$value": "72px",
+      "$description": "Section padding on desktop; equals the nav height."
+    }
+  },
+  "radius": {
+    "sm": {
+      "$type": "dimension",
+      "$value": "6px",
+      "$description": "Buttons, inputs, focus outlines, skip link, timeline logos."
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "10px",
+      "$description": "Cards and panels."
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "18px",
+      "$description": "The hero portrait only; used nowhere else."
+    },
+    "pill": {
+      "$type": "dimension",
+      "$value": "999px",
+      "$description": "Skill-bar track and fill, Tags, social icons (with 50%). The manual writes it as a literal 999px; named here so it has one source."
+    }
+  },
+  "layout": {
+    "container-width": {
+      "$type": "dimension",
+      "$value": "1120px",
+      "$description": "Maximum content width, centred, with space-5 gutters (space-4 at 720px and below)."
+    },
+    "nav-height": {
+      "$type": "dimension",
+      "$value": "72px",
+      "$description": "Sticky nav height and the scroll-margin offset for section anchors."
+    }
+  },
+  "shadow": {
+    "sm": {
+      "$type": "shadow",
+      "$value": {
+        "offsetX": "0px",
+        "offsetY": "1px",
+        "blur": "2px",
+        "spread": "0px",
+        "color": "rgba(0, 0, 0, 0.4)"
+      },
+      "$description": "Subtle lift."
+    },
+    "md": {
+      "$type": "shadow",
+      "$value": {
+        "offsetX": "0px",
+        "offsetY": "8px",
+        "blur": "24px",
+        "spread": "0px",
+        "color": "rgba(0, 0, 0, 0.35)"
+      },
+      "$description": "The hero portrait."
+    }
+  },
+  "font": {
+    "family": {
+      "heading": {
+        "$type": "fontFamily",
+        "$value": [
+          "Poppins",
+          "sans-serif"
+        ]
+      },
+      "body": {
+        "$type": "fontFamily",
+        "$value": [
+          "Lekton",
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "Consolas",
+          "monospace"
+        ]
+      }
+    }
+  },
+  "typography": {
+    "hero-name": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.heading}",
+        "fontSize": "44px",
+        "fontWeight": 600,
+        "lineHeight": 1.1
+      },
+      "$description": "The name in the hero, the only h1, in color-text."
+    },
+    "section-heading": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.heading}",
+        "fontSize": "26px",
+        "fontWeight": 600,
+        "lineHeight": 1.25
+      },
+      "$description": "Section titles (h2) inside SectionHeading, in color-text."
+    },
+    "hero-role": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.heading}",
+        "fontSize": "20px",
+        "fontWeight": 500,
+        "lineHeight": 1.1
+      },
+      "$description": "The animated role line under the hero name, in color-text-muted; reserves 28px min-height."
+    },
+    "card-title": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.heading}",
+        "fontSize": "17px",
+        "fontWeight": 600,
+        "lineHeight": 1.25
+      },
+      "$description": "Timeline, blog and contact card titles (h3), in color-text."
+    },
+    "service-name": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.heading}",
+        "fontSize": "16px",
+        "fontWeight": 600,
+        "lineHeight": 1.25
+      },
+      "$description": "Service card name, in color-text."
+    },
+    "wordmark": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.heading}",
+        "fontSize": "16px",
+        "fontWeight": 600,
+        "lineHeight": 1.25
+      },
+      "$description": "The wordmark in the nav, its working context. Never below 14px."
+    },
+    "nav-link": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.heading}",
+        "fontSize": "14px",
+        "fontWeight": 500,
+        "lineHeight": 1.6
+      },
+      "$description": "Nav links and tab labels in color-text-muted; color-accent on hover and when active."
+    },
+    "button-label": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.heading}",
+        "fontSize": "14px",
+        "fontWeight": 600,
+        "lineHeight": 1.6
+      },
+      "$description": "Button and submit labels, verb first."
+    },
+    "section-index": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.heading}",
+        "fontSize": "14px",
+        "fontWeight": 600,
+        "lineHeight": 1.6,
+        "letterSpacing": "0.08em"
+      },
+      "$description": "Two-digit section index with a leading zero, in color-accent."
+    },
+    "eyebrow": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.heading}",
+        "fontSize": "13px",
+        "fontWeight": 600,
+        "lineHeight": 1.6,
+        "letterSpacing": "0.1em"
+      },
+      "$description": "Uppercase, color-accent, always directly above the heading it introduces."
+    },
+    "form-label": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.heading}",
+        "fontSize": "13px",
+        "fontWeight": 500,
+        "lineHeight": 1.6
+      },
+      "$description": "Field labels in color-text-muted, 8px above the field."
+    },
+    "meta": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.heading}",
+        "fontSize": "12px",
+        "fontWeight": 500,
+        "lineHeight": 1.6
+      },
+      "$description": "Dates and meta in color-text-faint; the Current badge."
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.body}",
+        "fontSize": "16px",
+        "fontWeight": 400,
+        "lineHeight": 1.6
+      },
+      "$description": "Paragraphs in color-text-muted. Measure 60–75 characters."
+    },
+    "tagline": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.body}",
+        "fontSize": "16px",
+        "fontWeight": 400,
+        "lineHeight": 1.7
+      },
+      "$description": "The hero tagline in color-text-muted, capped at 520px."
+    },
+    "body-sm": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.body}",
+        "fontSize": "14px",
+        "fontWeight": 400,
+        "lineHeight": 1.6
+      },
+      "$description": "Card meta, descriptions, excerpts, empty states (in color-text-faint)."
+    },
+    "input-text": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.body}",
+        "fontSize": "15px",
+        "fontWeight": 400
+      },
+      "$description": "Text typed into inputs and textareas, in color-text."
+    },
+    "footer-text": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.body}",
+        "fontSize": "13px",
+        "fontWeight": 400
+      },
+      "$description": "Footer copyright and build credit, in color-text-faint."
+    }
+  }
+}

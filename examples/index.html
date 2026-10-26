@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f0f0f">
+<title>Signal — component gallery</title>
+<link rel="stylesheet" href="../dist/signal.css">
+<style>
+  .gallery { padding: var(--space-8) 0; }
+  .gallery__group { margin-bottom: var(--space-8); }
+  .gallery__item { margin: 0 0 var(--space-7); }
+  .gallery__label { margin: 0 0 var(--space-3); font-family: var(--font-heading); font-size: 12px; font-weight: 500; color: var(--color-text-faint); }
+  .gallery__stack { display: grid; gap: var(--space-5); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="../dist/signal.js"></script>
+<script>
+  var S = window.Signal, h = React.createElement;
+  var social = [
+    { network: 'instagram', href: 'https://www.instagram.com/sergio.techlead' },
+    { network: 'github', href: 'https://github.com/sergiotechlead' },
+    { network: 'linkedin', href: 'https://www.linkedin.com/in/serbeld/' }
+  ];
+  function item(label, node) { return h('div', { className: 'gallery__item', key: label }, h('p', { className: 'gallery__label' }, label), node); }
+  function group(index, title, items) { return h('section', { className: 'gallery__group', key: title }, h(S.SectionHeading, { index: index }, title), items); }
+
+  var App = h('main', { className: 'gallery sb-container' },
+    group(1, 'Brand', [
+      item('Wordmark — primary, lockup, monogram, on accent', h('div', { style: { display: 'flex', gap: 32, alignItems: 'center', flexWrap: 'wrap' } },
+        h(S.Wordmark, { size: 28 }), h(S.Wordmark, { variant: 'lockup', size: 32 }), h(S.Wordmark, { variant: 'monogram', size: 24 }),
+        h('div', { style: { background: 'var(--color-accent)', padding: '16px 24px', borderRadius: 'var(--radius-md)' } }, h(S.Wordmark, { size: 28, onAccent: true })))),
+      item('Portrait (empty frame until the photo is added)', h(S.Portrait)),
+      item('Icons', h('div', { style: { display: 'flex', gap: 20, color: 'var(--color-text-muted)', fontSize: 20 } }, Object.keys(S.ICONS).map(function (n) { return h(S.Icon, { key: n, name: n, label: n }); })))
+    ]),
+    group(2, 'Actions', [
+      item('Button', h('div', { className: 'sb-btn-row' },
+        h(S.Button, { icon: 'download', href: '#cv' }, 'Download CV'),
+        h(S.Button, { variant: 'outline', icon: 'arrow-right', href: '#contact' }, 'Get in touch'),
+        h(S.Button, { variant: 'outline', icon: 'calendar-days' }, 'Schedule a call')))
+    ]),
+    group(3, 'Navigation', [
+      item('NavBar', h(S.NavBar, { links: ['About', 'Experience', 'Skills', 'Services', 'Contact', 'Blog'].map(function (l, i) { return { label: l, href: '#' + l.toLowerCase(), active: i === 0 }; }) })),
+      item('Tabs', h(S.Tabs, { label: 'Credentials', tabs: [{ id: 'education', label: 'Education' }, { id: 'certifications', label: 'Certifications' }, { id: 'vtex', label: 'VTEX Training' }] })),
+      item('SocialIcons — default and loading', h('div', { className: 'gallery__stack' }, h(S.SocialIcons, { links: social }), h(S.SocialIcons, { links: social, loading: true }))),
+      item('Footer', h(S.Footer, { social: social }))
+    ]),
+    group(4, 'Content', [
+      item('TypedRole', h(S.TypedRole, { text: 'Technical Lead (VTEX)' })),
+      item('Tag — chip and badge', h('div', { style: { display: 'flex', gap: 8, flexWrap: 'wrap' } }, ['Precise', 'Technically authoritative', 'Approachable', 'Reliable', 'Modern', 'Direct'].map(function (t) { return h(S.Tag, { key: t }, t); }), h(S.Tag, { variant: 'badge' }, 'Current'))),
+      item('FactList', h('div', { style: { maxWidth: 440 } }, h(S.FactList, { facts: [{ label: 'Residence', value: 'Bogotá, Colombia' }, { label: 'Freelance', value: 'Available' }, { label: 'Specialty', value: 'VTEX Architecture' }, { label: 'Focus', value: 'React · Node.js' }] }))),
+      item('CheckList', h(S.CheckList, { title: 'Also working with', items: ['Strong understanding of React.js and its core principles.', 'Solid experience in JavaScript, HTML and CSS.', 'Experience with RESTful APIs.'] })),
+      item('SkillBar', h('div', { className: 'sb-skill-grid' }, [['VTEX', 'Advanced', 90], ['HTML & CSS', 'Advanced', 90], ['TypeScript', 'Intermediate', 85], ['React', 'Intermediate', 85]].map(function (s) { return h(S.SkillBar, { key: s[0], name: s[0], level: s[1], percentage: s[2] }); })))
+    ]),
+    group(5, 'Cards', [
+      item('Card', h('div', { style: { maxWidth: 460 } }, h(S.Card, { title: 'Prefer to talk?', subtitle: 'Book a 30-minute call directly on my calendar.' }, h(S.Button, { variant: 'outline', icon: 'calendar-days', href: 'https://calendly.com/serbeldiaz/30min', external: true }, 'Schedule a call')))),
+      item('TimelineCard', h('ul', { className: 'sb-timeline' },
+        h(S.TimelineCard, { current: true, date: '2025 - Present', title: 'Consultant / Engineer', company: 'Valtech', location: 'Bogotá, Colombia (Remote)' }),
+        h(S.TimelineCard, { date: '2023 - 2025', title: 'Full-stack Developer (VTEX)', company: 'Rena Ware International', location: 'Bogotá, Colombia (Remote)' }))),
+      item('ServiceCard', h('div', { className: 'sb-services sb-services--single' }, h(S.ServiceCard, { name: 'Contentful Development', description: 'I build and integrate Contentful across headless stacks: content modeling, migrations from WordPress and legacy CMSs, GraphQL layers, and reusable component libraries in React and Next.js. Editors get to publish without touching a developer.', price: 90, action: { label: 'Discuss your project', href: 'https://calendly.com/serbeldiaz/30min' } }))),
+      item('BlogCard', h('div', { style: { maxWidth: 360 } }, h(S.BlogCard, { href: '#/blog', title: 'Post title, clamped to two lines', excerpt: 'Excerpt text, clamped to three lines, in Lekton at 14px.' })))
+    ]),
+    group(6, 'Forms', [
+      item('TextField — default and error', h('div', { style: { maxWidth: 420 } }, h(S.TextField, { label: 'Name', id: 'g-name', defaultValue: 'Sergio Beleño' }), h(S.TextField, { label: 'Email', id: 'g-email', type: 'email', defaultValue: 'serbeldiaz@', error: 'Enter a full email address.' }))),
+      item('ContactForm', h('div', { style: { maxWidth: 520 } }, h(S.ContactForm, { onSubmit: function () { return Promise.resolve(); } })))
+    ]),
+    group(7, 'Documents', [
+      item('Callout', h('div', { className: 'gallery__stack' }, h(S.Callout, { label: 'Positioning' }, 'Technical Leader and Full Stack Web Developer specialised in VTEX, SEO and building impactful e-commerce experiences.'), h(S.Callout, { label: 'Rule', tone: 'warning' }, 'Accent dark at #407dc2 sits at exactly 4.5:1 on the page background. Never use it for body copy or for any text below 18px.'))),
+      item('DoDont', h(S.DoDont, { dos: ['Specialist positioning on VTEX and headless commerce', 'Evidence first: roles, dates, platforms, outcomes'], donts: ['Generalist framing such as I can build websites', 'Superlatives with no proof behind them'] }))
+    ])
+  );
+  ReactDOM.createRoot(document.getElementById('root')).render(App);
+</script>
+</body>
+</html>
